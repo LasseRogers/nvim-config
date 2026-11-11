@@ -55,13 +55,14 @@ Leader is `<Space>`.
 | `<leader>gf` | format |
 | `<leader>d` | line diagnostics |
 | `<leader>x` | close buffer, keep the window |
+| `<leader>t` | toggle terminal (bottom split, keeps running when hidden) |
 | `<leader>gp` `<leader>gt` | preview hunk, toggle blame |
 | `<leader>gv` | toggle side-by-side diff against HEAD |
 | `<leader>lg` | lazygit |
 | `<leader>mr` | toggle markdown rendering |
 | `<leader>cv` | toggle CSV view |
 | `<C-h/j/k/l>` | move between splits and tmux panes (also from terminal mode) |
-| `<Esc><Esc>` | leave terminal mode |
+| `<Esc><Esc>` | leave terminal mode; then `q` or `<leader>t` hides the terminal |
 
 Completion: `<Tab>` accepts, `<CR>` is always a newline.
 
