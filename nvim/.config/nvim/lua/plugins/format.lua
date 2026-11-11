@@ -13,6 +13,7 @@ return {
         javascriptreact = { "prettier" },
         typescript = { "prettier" },
         typescriptreact = { "prettier" },
+        rust = { "rustfmt" },
       },
       formatters = {
         sql_formatter = { prepend_args = { "--language", "postgresql" } },

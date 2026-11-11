@@ -17,6 +17,8 @@ The script is idempotent. Existing configs are moved to `*.bak-<timestamp>` befo
   JetBrainsMono Nerd Font installed under `~/.local`. Set the terminal font to
   *JetBrainsMono Nerd Font Mono* afterwards.
 
+Both also get the Rust toolchain through rustup (`~/.cargo`).
+
 LSP servers, formatters and tree-sitter parsers install on first launch (`:Mason` to check).
 
 ## Layout
@@ -81,6 +83,7 @@ tmux prefix is `<C-s>`. `|` and `-` split, `r` reloads, `I` installs plugins.
 | YAML / JSON | yamlls / jsonls | | LSP |
 | SQL | | | sql-formatter (postgresql) |
 | JavaScript / TypeScript | ts_ls | eslint | prettier |
+| Rust | rust_analyzer | clippy | rustfmt |
 | Lua | lua_ls | | stylua |
 
 ## Notes

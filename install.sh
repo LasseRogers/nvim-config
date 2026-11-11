@@ -103,7 +103,8 @@ install_debian() {
     fi
   fi
 
-  if ! fc-list | grep -qi "JetBrainsMono Nerd Font Mono"; then
+  # Not grep -q: it exits on the first match, fc-list gets SIGPIPE, and pipefail fails the check.
+  if ! fc-list : family | grep -i "JetBrainsMono Nerd Font Mono" >/dev/null; then
     log "JetBrainsMono Nerd Font"
     local tmp
     tmp="$(mktemp -d)"
@@ -145,6 +146,20 @@ link() {
     echo '[ -f ~/.config/bash/rc.sh ] && . ~/.config/bash/rc.sh' >>"$HOME/.bashrc"
 }
 
+# rustup, not apt/brew: toolchain updates and components (rust-src for rust-analyzer).
+rust_toolchain() {
+  if ! command -v rustup >/dev/null 2>&1 && [ ! -x "$HOME/.cargo/bin/rustup" ]; then
+    log "Rust (rustup)"
+    local script
+    if ! script="$(curl -fsSL https://sh.rustup.rs)" ||
+      ! sh -c "$script" -- -y --no-modify-path --profile default; then
+      warn "rustup install failed, skipping Rust"
+      return 0
+    fi
+  fi
+  "$HOME/.cargo/bin/rustup" component add rust-src >/dev/null || warn "couldn't add rust-src"
+}
+
 tmux_plugins() {
   if [ ! -d "$HOME/.tmux/plugins/tpm" ]; then
     git clone -q --depth 1 https://github.com/tmux-plugins/tpm "$HOME/.tmux/plugins/tpm"
@@ -165,6 +180,7 @@ case "$OS" in
 esac
 
 link
+rust_toolchain
 tmux_plugins
 nvim_plugins
 

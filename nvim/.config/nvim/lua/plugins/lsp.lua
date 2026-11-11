@@ -28,6 +28,9 @@ return {
       vim.lsp.config("*", {
         capabilities = require("cmp_nvim_lsp").default_capabilities(),
       })
+      vim.lsp.config("rust_analyzer", {
+        settings = { ["rust-analyzer"] = { check = { command = "clippy" } } },
+      })
       vim.lsp.config("lua_ls", {
         settings = { Lua = { diagnostics = { globals = { "vim" } } } },
       })
@@ -45,6 +48,7 @@ return {
           "jsonls",
           "ts_ls",
           "eslint",
+          "rust_analyzer",
         },
       })
 
