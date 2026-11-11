@@ -9,6 +9,10 @@ return {
         bash = { "shfmt" },
         sql = { "sql_formatter" },
         lua = { "stylua" },
+        javascript = { "prettier" },
+        javascriptreact = { "prettier" },
+        typescript = { "prettier" },
+        typescriptreact = { "prettier" },
       },
       formatters = {
         sql_formatter = { prepend_args = { "--language", "postgresql" } },

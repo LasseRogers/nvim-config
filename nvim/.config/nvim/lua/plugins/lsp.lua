@@ -13,6 +13,7 @@ return {
         "shellcheck", -- picked up by bashls
         "hadolint",
         "sql-formatter",
+        "prettier",
       },
     },
   },
@@ -42,6 +43,8 @@ return {
           "docker_compose_language_service",
           "yamlls",
           "jsonls",
+          "ts_ls",
+          "eslint",
         },
       })
 
