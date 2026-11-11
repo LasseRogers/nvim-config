@@ -56,6 +56,7 @@ Leader is `<Space>`.
 | `<leader>d` | line diagnostics |
 | `<leader>x` | close buffer, keep the window |
 | `<leader>gp` `<leader>gt` | preview hunk, toggle blame |
+| `<leader>gv` | toggle side-by-side diff against HEAD |
 | `<leader>lg` | lazygit |
 | `<leader>mr` | toggle markdown rendering |
 | `<leader>cv` | toggle CSV view |
