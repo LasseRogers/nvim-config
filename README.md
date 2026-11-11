@@ -54,6 +54,7 @@ Leader is `<Space>`.
 | `<leader>ca` | code action |
 | `<leader>gf` | format |
 | `<leader>d` | line diagnostics |
+| `<leader>x` | close buffer, keep the window |
 | `<leader>gp` `<leader>gt` | preview hunk, toggle blame |
 | `<leader>lg` | lazygit |
 | `<leader>mr` | toggle markdown rendering |
@@ -62,6 +63,8 @@ Leader is `<Space>`.
 | `<Esc><Esc>` | leave terminal mode |
 
 Completion: `<Tab>` accepts, `<CR>` is always a newline.
+
+Closing the last buffer brings back the dashboard.
 
 tmux prefix is `<C-s>`. `|` and `-` split, `r` reloads, `I` installs plugins.
 

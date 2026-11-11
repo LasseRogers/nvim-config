@@ -4,6 +4,8 @@ map("n", "<Esc>", "<cmd>nohlsearch<CR>")
 map("n", "<leader>w", "<cmd>w<CR>", { desc = "Save" })
 map("n", "<leader>q", "<cmd>q<CR>", { desc = "Quit" })
 map("n", "<leader>d", vim.diagnostic.open_float, { desc = "Line diagnostics" })
+-- Keeps the window (and the file tree next to it) instead of closing it like :bd.
+map("n", "<leader>x", function() Snacks.bufdelete() end, { desc = "Close buffer" })
 map("v", "J", ":m '>+1<CR>gv=gv", { desc = "Move selection down" })
 map("v", "K", ":m '<-2<CR>gv=gv", { desc = "Move selection up" })
 
