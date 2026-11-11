@@ -56,8 +56,8 @@ Leader is `<Space>`.
 | `<leader>ca` | code action |
 | `<leader>gf` | format |
 | `<leader>d` | line diagnostics |
-| `<leader>x` | close buffer, keep the window |
-| `<leader>t` | toggle terminal (bottom split, keeps running when hidden) |
+| `<leader>x` | close buffer, keep the window (hides a terminal instead) |
+| `<leader>t` | terminal: open/focus, hide when focused; restarts if the shell exited |
 | `<leader>gp` `<leader>gt` | preview hunk, toggle blame |
 | `<leader>gv` | toggle side-by-side diff against HEAD |
 | `<leader>lg` | lazygit |

@@ -8,5 +8,8 @@ return {
   priority = 1000,
   opts = {
     image = { enabled = has_graphics },
+    -- Snacks' double-<Esc> forwards the first <Esc> to the shell, where readline turns it
+    -- into Meta and eats the next key. The <Esc><Esc> map in keymaps.lua doesn't leak.
+    terminal = { win = { keys = { term_normal = false } } },
   },
 }

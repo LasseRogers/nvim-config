@@ -16,11 +16,12 @@ vim.api.nvim_create_autocmd("BufDelete", {
   callback = function()
     vim.schedule(function()
       if has_file_buffers() then return end
-      -- Pick an editor window, not neo-tree; if there is none, make one.
+      -- Pick a regular editor window (not neo-tree, not a terminal split); if there is none, make one.
       local target
       for _, win in ipairs(vim.api.nvim_tabpage_list_wins(0)) do
         local buf = vim.api.nvim_win_get_buf(win)
-        if vim.bo[buf].filetype ~= "neo-tree" and vim.api.nvim_win_get_config(win).relative == "" then
+        local regular = vim.bo[buf].buftype == "" or vim.bo[buf].filetype == "alpha"
+        if regular and vim.bo[buf].filetype ~= "neo-tree" and vim.api.nvim_win_get_config(win).relative == "" then
           target = win
           break
         end
